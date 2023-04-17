@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR Doody Duty Form</title>
+</head>
+<body>
+    <div id="form-container">
+        <form action="./stored.html" method="post" class="sign-up-form">
+
+            <section>
+                <!--fname, m.i., lname, email, password, address, service wanted-->
+                <h2>Personal Information</h2>
+
+                <div class="form-div" id="full-name-input">
+
+                    <div class="name-input" id="first-name-input">
+                        <label for="fname">First Name:</label>
+                        <input type="text" name="fname" id="first-name" placeholder="John" maxLength="50" required>
+                    </div>
+
+                    <div class="name-input" id="middle-initial-input"></div>
+                        <label for="minitial">M.I.</label>
+                        <input type="text" name="minitial" id="middle-initial" placeholder="H" maxLength="1">
+                    </div>
+
+                    <div class="name-input" id="last-name-input"></div>
+                        <label for="lname">Last Name:</label>
+                        <input type="text" name="lname" id="last-name" placeholder="Doe" maxLength="50" required>
+                    </div>
+                </div>
+
+                <div class="form-div" id="account-details-input">
+
+                    <div class="account-input" id="email-input">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="user-email" placeholder="Example@domain.com" maxLength="150" required>
+                    </div>
+
+                    <div class="account-input" id="password-creation-input">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" id="user-password" placeholder="Create New Password" minlength="8" maxLength="20" required>
+                    </div>
+
+                    <div class="account-input" id="password-creation-validation-input">
+                        <label for="password">Confirm Password:</label>
+                        <input type="password" name="password" id="user-password" placeholder="Confirm Password" minLength="8" maxLength="20" required>
+                    </div>
+                </div>
+
+                <div class="form-div" id="full-address-input">
+
+                    <div class="address-input" id="street-address-input">
+                        <label for="street-address">Street Address:</label>
+                        <input type="text" name="street-address" id="street-address" placeholder="123 Abc St" maxLength="125" required>
+                    </div>
+
+                    <div class="address-input" id="city-name-input">
+                        <label for="city">City:</label>
+                        <input type="text" name="city" id="city" placeholder="Little Rock" maxLength="50" required>
+                    </div>
+
+                    <div class="address-input" id="state-name-input">
+                        <label for="state-name">State</label>
+                        <select id="state" name="state-name" required>
+                            <option placeholder="alabama">Alabama</option>
+                            <option placeholder="alaska">Alaska</option>
+                            <option placeholder="arizona">Arizona</option>
+                            <option placeholder="arkansas" selected>Arkansas</option>
+                            <option placeholder="california">California</option>
+                            <option placeholder="colorado">Colorado</option>
+                            <option placeholder="connecticut">Connecticut</option>
+                        </select>
+                    </div>
+
+                    <div class="address-input" id="country-input">
+                        <label hidden for="country">Country:</label>
+                        <select hidden id="country" name="country">
+                            <option placeholder="United-States" selected>United States</option>
+                        </select>
+                    </div>
+
+                    <div class="address-input" id="zipcode-input">
+                        <label for="zipcode">Zipcode:</label>
+                        <input type="text" name="zipcode" id="zipcode" placeholder="12345" maxLength="5" required>
+                    </div>
+                </div>
+
+                <!--change to multi check box
+                    display next form sections based on answer-->
+
+                <div class="form-div" id="service-wanted">
+                    <label for="service-req">Which Services Do You Need?</label>
+                    <select id="service-req" name="service-req" multiple required>
+                        <option placeholder="dog-pick-up">Dog Waste Pick-Up</option>
+                        <option placeholder="litter-box">Litter Box Exchange (for Cats and Small Pets)</option>
+                        <option placeholder="other">Other Service</option>
+                    </select>
+                </div>
+                
+            </section>
+            <section id="weekly-service-section">
+                <!--weekly service, num dogs, property size, offsite waste removal, /maybe/ bigdogs?-->
+                <h2>PLACEHOLDER WEEKLY SERV</h2>
+
+                <div class="form-div" id="full-duty-service-input">
+                    <div class="duty-service-info" id="dog-weekly-visit-input">
+                        <fieldset aria-required="true">
+                            <legend>Choose Your Weekly Dog Pickup Service</legend>
+
+                            <input type="radio" id="standard-duty" name="duty-lvl" placeholder="1">
+                            <label for="standard-duty">Once per week</label><br>
+
+                            <input type="radio" id="double-duty" name="duty-lvl" placeholder="2">
+                            <label for="double-duty">Twice per Week</label><br>
+
+                            <input type="radio" id="single-duty" name="duty-lvl" placeholder="3">
+                            <label for="single-duty">One Time Only</label><br>
+
+                        </fieldset>
+                    </div>
+                    <div class="duty-service-info" id="num-dogs-input">
+                        <label for="num-dogs">How Many Dogs Do You Own?</label>
+                        <input type="number" id="num-dogs" name="num-dogs" min="0" max="100" placeholder="2">
+                    </div>
+
+                    <div class="duty-service-info" id="property-size-input">
+                        <label for="property-size">Select If Your Property's Cleaning Area Is Larger Than 0.5 Acres</label>
+                        <input type="checkbox" id="property-size" name="property-size">
+                    </div>
+
+                    <div class="duty-service-info" id="waste-removal-input">
+                        <label for="waste-removal">Usually I'll Leave Bagged Waste In Your Trashcan,
+                                                    Select This Box To Have Me Haul It Off Your Property.
+                        </label>
+                        <input type="checkbox" id="waste-removal" name="waste-removal">
+                    </div>
+                    <!--Big Dogs Input? Necessary?
+                        Add yard cleaning-->
+
+
+                </div>
+            </section>
+
+            <section id="cat-service-section">
+                <!--weekly service, num litter boxes-->
+                <h2>PLACEHOLDER CAT SERVICE</h2>
+                <div class="form-div" id="full-cat-service-input">
+                    
+                    <div class="cat-service-info" id="cat-weekly-visit-input">
+                        <fieldset aria-required="true">
+                            <legend>How Many Visits Per Week?</legend>
+
+                            <input type="radio" id="standard-litter" name="ltr-lvl" placeholder="1">
+                            <label for="standard-litter">Once per week</label><br>
+
+                            <input type="radio" id="double-litter" name="ltr-lvl" placeholder="2">
+                            <label for="double-litter">Twice per Week</label><br>
+                        </fieldset>
+                    </div>
+                    <div class="cat-service-info" id="num-lit-box-input">
+                        <label class="num-lit-box">How Many Litter Boxes Do You Need Cleaned?</label>
+                        <input type="number" id="num-lit-box" name="num-lit-box" min="0" max="10" placeholder="2">
+                    </div>
+                </div>
+            </section>
+
+            <section id="adtl-services-section">
+                <!---->
+                <h2>PLACEHOLDER ADTL SERV</h2>
+                <div class="form-div" id="full-adtl-services-input">
+                    <div class="adtl-service" id=""></div>
+                </div>
+            </section>
+
+            <section id="confirm-section">
+                <h2>PH CONFIRM</h2>
+                <div class="form-div" id="confirmations-inputs">
+                    <div class="final-info" id="referral-input">
+                        <label for="referral">How Did You Hear About Us?</label>
+                        <select id="referral" name="referral" required>
+                            <option placeholder="facebook">Facebook</option>
+                            <option placeholder="instagram">Instagram</option>
+                            <option placeholder="nextdoor">Nextdoor</option>
+                            <option placeholder="google">Google</option>
+                            <option placeholder="other-search">Another Search Engine</option>
+                            <option placeholder="human">Friend or Family</option> <!--Possible to input name? add opt field below?-->
+                        </select>
+                    </div>
+                    <div class="final-info" id="confirm-tos-input">
+                        <label for="read-tos">I Have Read the Terms of Service</label> <!--ADD LINK TO TOA-->
+                        <input type="checkbox" id="read-tos" name="read-tos">
+                    </div>
+                    <div class="final-info" id="submit-input">
+                        <button type="submit">All Information Entered is Correct</button>
+                    </div>
+                </div>
+            </section>
+        </form>
+    </div>
+</body>
+</html>
